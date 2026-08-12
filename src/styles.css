@@ -1,0 +1,270 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-xs: 4px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+  --color-canvas-soft: var(--canvas-soft);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-active: var(--primary-active);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-hairline: var(--hairline);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-sticker-purple: var(--sticker-purple);
+  --color-sticker-pink: var(--sticker-pink);
+  --color-sticker-orange: var(--sticker-orange);
+  --color-sticker-teal: var(--sticker-teal);
+  --color-sticker-green: var(--sticker-green);
+  --color-sticker-sky: var(--sticker-sky);
+  --font-sans: "Inter", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --shadow-soft:
+    rgba(0, 0, 0, 0.01) 0 0.175px 1.041px, rgba(0, 0, 0, 0.02) 0 0.8px 2.925px,
+    rgba(0, 0, 0, 0.027) 0 2.025px 7.847px, rgba(0, 0, 0, 0.04) 0 4px 18px;
+  --shadow-elevated:
+    rgba(0, 0, 0, 0.02) 0 1px 3px, rgba(0, 0, 0, 0.03) 0 6px 14px, rgba(0, 0, 0, 0.05) 0 23px 52px;
+}
+
+:root {
+  --radius: 12px;
+  --canvas: oklch(1 0 0);
+  --canvas-soft: oklch(0.9705 0.0025 84.57);
+  --background: var(--canvas-soft);
+  --ink: oklch(0.145 0 0);
+  --ink-secondary: oklch(0.2909 0.0031 67.79);
+  --ink-muted: oklch(0.4956 0.0087 63.13);
+  --ink-faint: oklch(0.7222 0.0122 67.68);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.5623 0.1834 254.09);
+  --primary-active: oklch(0.4517 0.1568 255.63);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.3288 0.132 273.1);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.9705 0.0025 84.57);
+  --muted-foreground: var(--ink-muted);
+  --accent: oklch(0.9705 0.0025 84.57);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --hairline: oklch(0.9219 0 0);
+  --border: var(--hairline);
+  --input: oklch(0.8825 0 0);
+  --ring: var(--primary);
+  --sticker-purple: oklch(0.8199 0.0968 306.05);
+  --sticker-pink: oklch(0.6906 0.2354 348.61);
+  --sticker-orange: oklch(0.5883 0.1861 41.29);
+  --sticker-teal: oklch(0.6083 0.0952 187.06);
+  --sticker-green: oklch(0.6484 0.1885 143.4);
+  --sticker-sky: oklch(0.7205 0.1215 245.29);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "lnum", "locl";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility display-1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.033em;
+}
+
+@utility heading-1 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+@utility heading-2 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.23;
+  letter-spacing: -0.024em;
+}
+
+@utility heading-3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.27;
+  letter-spacing: -0.011em;
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.125px;
+}
+
+/* Long-form markdown article styling */
+@utility guide-prose {
+  color: var(--ink-secondary);
+  font-size: 1rem;
+  line-height: 1.65;
+
+  & h2 {
+    color: var(--ink);
+    font-size: 1.625rem;
+    font-weight: 700;
+    line-height: 1.23;
+    letter-spacing: -0.024em;
+    margin-top: 3rem;
+    margin-bottom: 0.75rem;
+    scroll-margin-top: 6rem;
+  }
+
+  & h3 {
+    color: var(--ink);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  & h4 {
+    color: var(--ink);
+    font-weight: 600;
+    margin-top: 1.25rem;
+  }
+
+  & p {
+    margin-bottom: 1rem;
+  }
+
+  & a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  & strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  & ul,
+  & ol {
+    margin: 0 0 1rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  & ul {
+    list-style: disc;
+  }
+
+  & ol {
+    list-style: decimal;
+  }
+
+  & blockquote {
+    border-left: 3px solid var(--primary);
+    background: var(--canvas);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    color: var(--ink-muted);
+  }
+
+  & blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  & code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.875em;
+    background: var(--canvas-soft);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-xs);
+    padding: 0.1rem 0.3rem;
+    color: var(--ink);
+  }
+
+  & pre {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  & pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.9375rem;
+  }
+
+  & th,
+  & td {
+    border: 1px solid var(--hairline);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  & th {
+    background: var(--canvas-soft);
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  & hr {
+    border: 0;
+    border-top: 1px solid var(--hairline);
+    margin: 2.5rem 0;
+  }
+}
