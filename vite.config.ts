@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/flutter-interview-prep/",
+  base: "/flutter-prep/",
   plugins: [react(), tailwindcss(), tsconfigPaths()],
 });
