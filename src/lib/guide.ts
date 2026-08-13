@@ -37,7 +37,10 @@ function parse(): GuideSection[] {
 }
 
 function build(s: { title: string; body: string[] }): GuideSection {
-  const body = s.body.join("\n").replace(/^\s*---\s*$/gm, "").trim();
+  const body = s.body
+    .join("\n")
+    .replace(/^\s*---\s*$/gm, "")
+    .trim();
   const questions = s.body
     .filter((l) => /^##\s+/.test(l))
     .map((l) => l.replace(/^##\s+/, "").trim());

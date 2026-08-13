@@ -5,13 +5,9 @@ import remarkGfm from "remark-gfm";
 import { List } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { getSection, sections } from "@/lib/guide";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { CodeBlock } from "@/components/CodeBlock";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export const Route = createFileRoute("/guide/$slug")({
   loader: ({ params }) => {
@@ -94,7 +90,32 @@ function GuideSectionPage() {
           </p>
           <div className="mt-8 rounded-lg border border-hairline bg-canvas p-6 sm:p-9">
             <div className="guide-prose">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{section.body}</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  code(props) {
+                    const { children, className, node, ...rest } = props;
+                    const match = /language-(\w+)/.exec(className || "");
+                    const codeString = String(children).replace(/\n$/, "");
+                    const isInline = !match && !codeString.includes("\n");
+
+                    if (isInline) {
+                      return (
+                        <code className={className} {...rest}>
+                          {children}
+                        </code>
+                      );
+                    }
+
+                    return <CodeBlock code={codeString} language={match ? match[1] : "text"} />;
+                  },
+                  pre(props) {
+                    return <>{props.children}</>;
+                  },
+                }}
+              >
+                {section.body}
+              </ReactMarkdown>
             </div>
           </div>
 
@@ -137,15 +158,18 @@ function GuideSectionPage() {
           </button>
         </SheetTrigger>
 
-        <SheetContent side="left" className="w-[280px] overflow-y-auto sm:w-[320px]">
+        <SheetContent
+          side="left"
+          className="w-[280px] overflow-y-auto sm:w-[320px] bg-canvas text-ink"
+        >
           <SheetHeader>
-            <SheetTitle>Contents</SheetTitle>
+            <div className="flex items-center justify-between">
+              <SheetTitle className="text-ink">Contents</SheetTitle>
+              <ThemeToggle />
+            </div>
           </SheetHeader>
           <div className="mt-4 px-2">
-            <SectionNavLinks
-              activeSlug={section.slug}
-              onNavigate={() => setSheetOpen(false)}
-            />
+            <SectionNavLinks activeSlug={section.slug} onNavigate={() => setSheetOpen(false)} />
           </div>
         </SheetContent>
       </Sheet>

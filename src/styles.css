@@ -1,8 +1,9 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant pitch-dark (&:is(.pitch-dark *));
 
 @theme inline {
   --radius-xs: 4px;
@@ -88,6 +89,60 @@
   --sticker-sky: oklch(0.7205 0.1215 245.29);
 }
 
+.dark {
+  --canvas: oklch(0.18 0.015 250);
+  --canvas-soft: oklch(0.13 0.015 250);
+  --background: var(--canvas-soft);
+  --ink: oklch(0.96 0 0);
+  --ink-secondary: oklch(0.82 0.01 250);
+  --ink-muted: oklch(0.65 0.01 250);
+  --ink-faint: oklch(0.48 0.01 250);
+  --foreground: var(--ink);
+  --card: oklch(0.18 0.015 250);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.18 0.015 250);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.62 0.18 254);
+  --primary-active: oklch(0.52 0.16 254);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.24 0.03 250);
+  --secondary-foreground: oklch(0.96 0 0);
+  --muted: oklch(0.2 0.015 250);
+  --muted-foreground: var(--ink-muted);
+  --accent: oklch(0.22 0.02 250);
+  --accent-foreground: var(--ink);
+  --hairline: oklch(0.28 0.015 250);
+  --border: var(--hairline);
+  --input: oklch(0.28 0.015 250);
+}
+
+.pitch-dark {
+  --canvas: oklch(0.08 0 0);
+  --canvas-soft: oklch(0 0 0);
+  --background: var(--canvas-soft);
+  --ink: oklch(1 0 0);
+  --ink-secondary: oklch(0.88 0 0);
+  --ink-muted: oklch(0.62 0 0);
+  --ink-faint: oklch(0.42 0 0);
+  --foreground: var(--ink);
+  --card: oklch(0.08 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.68 0.22 254);
+  --primary-active: oklch(0.58 0.2 254);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.1 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.1 0 0);
+  --muted-foreground: var(--ink-muted);
+  --accent: oklch(0.12 0 0);
+  --accent-foreground: var(--ink);
+  --hairline: oklch(0.2 0 0);
+  --border: var(--hairline);
+  --input: oklch(0.2 0 0);
+}
+
 @layer base {
   * {
     border-color: var(--color-hairline);
@@ -99,6 +154,9 @@
     font-family: var(--font-sans);
     font-feature-settings: "lnum", "locl";
     -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
   }
 }
 
@@ -267,4 +325,127 @@
     border-top: 1px solid var(--hairline);
     margin: 2.5rem 0;
   }
+}
+
+/* ── Code Editor Prism Theme ─────────────────────────────────────── */
+.code-editor-content table,
+.code-editor-content tr,
+.code-editor-content th,
+.code-editor-content td {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Dark & Pitch Dark Syntax Highlighting */
+.dark .code-editor-content .token.comment,
+.dark .code-editor-content .token.prolog,
+.dark .code-editor-content .token.doctype,
+.dark .code-editor-content .token.cdata {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.dark .code-editor-content .token.punctuation {
+  color: #c9d1d9;
+}
+
+.dark .code-editor-content .token.property,
+.dark .code-editor-content .token.tag,
+.dark .code-editor-content .token.boolean,
+.dark .code-editor-content .token.number,
+.dark .code-editor-content .token.constant,
+.dark .code-editor-content .token.symbol,
+.dark .code-editor-content .token.deleted {
+  color: #79c0ff;
+}
+
+.dark .code-editor-content .token.selector,
+.dark .code-editor-content .token.attr-name,
+.dark .code-editor-content .token.string,
+.dark .code-editor-content .token.char,
+.dark .code-editor-content .token.builtin,
+.dark .code-editor-content .token.inserted {
+  color: #a5d6ff;
+}
+
+.dark .code-editor-content .token.operator,
+.dark .code-editor-content .token.entity,
+.dark .code-editor-content .token.url {
+  color: #d2a8ff;
+}
+
+.dark .code-editor-content .token.atrule,
+.dark .code-editor-content .token.attr-value,
+.dark .code-editor-content .token.keyword {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.dark .code-editor-content .token.function,
+.dark .code-editor-content .token.class-name {
+  color: #d2a8ff;
+  font-weight: 500;
+}
+
+.dark .code-editor-content .token.regex,
+.dark .code-editor-content .token.important,
+.dark .code-editor-content .token.variable {
+  color: #ffa657;
+}
+
+/* Light Theme Code Syntax Highlighting */
+:root:not(.dark) .code-editor-content .token.comment,
+:root:not(.dark) .code-editor-content .token.prolog,
+:root:not(.dark) .code-editor-content .token.doctype,
+:root:not(.dark) .code-editor-content .token.cdata {
+  color: #64748b;
+  font-style: italic;
+}
+
+:root:not(.dark) .code-editor-content .token.punctuation {
+  color: #334155;
+}
+
+:root:not(.dark) .code-editor-content .token.property,
+:root:not(.dark) .code-editor-content .token.tag,
+:root:not(.dark) .code-editor-content .token.boolean,
+:root:not(.dark) .code-editor-content .token.number,
+:root:not(.dark) .code-editor-content .token.constant,
+:root:not(.dark) .code-editor-content .token.symbol,
+:root:not(.dark) .code-editor-content .token.deleted {
+  color: #0284c7;
+}
+
+:root:not(.dark) .code-editor-content .token.selector,
+:root:not(.dark) .code-editor-content .token.attr-name,
+:root:not(.dark) .code-editor-content .token.string,
+:root:not(.dark) .code-editor-content .token.char,
+:root:not(.dark) .code-editor-content .token.builtin,
+:root:not(.dark) .code-editor-content .token.inserted {
+  color: #0369a1;
+}
+
+:root:not(.dark) .code-editor-content .token.operator,
+:root:not(.dark) .code-editor-content .token.entity,
+:root:not(.dark) .code-editor-content .token.url {
+  color: #7c3aed;
+}
+
+:root:not(.dark) .code-editor-content .token.atrule,
+:root:not(.dark) .code-editor-content .token.attr-value,
+:root:not(.dark) .code-editor-content .token.keyword {
+  color: #d97706;
+  font-weight: 600;
+}
+
+:root:not(.dark) .code-editor-content .token.function,
+:root:not(.dark) .code-editor-content .token.class-name {
+  color: #6d28d9;
+  font-weight: 600;
+}
+
+:root:not(.dark) .code-editor-content .token.regex,
+:root:not(.dark) .code-editor-content .token.important,
+:root:not(.dark) .code-editor-content .token.variable {
+  color: #ea580c;
 }
