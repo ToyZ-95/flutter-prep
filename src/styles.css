@@ -44,7 +44,8 @@
   --color-sticker-teal: var(--sticker-teal);
   --color-sticker-green: var(--sticker-green);
   --color-sticker-sky: var(--sticker-sky);
-  --font-sans: "Inter", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-sans: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --shadow-soft:
     rgba(0, 0, 0, 0.01) 0 0.175px 1.041px, rgba(0, 0, 0, 0.02) 0 0.8px 2.925px,
     rgba(0, 0, 0, 0.027) 0 2.025px 7.847px, rgba(0, 0, 0, 0.04) 0 4px 18px;
@@ -272,7 +273,7 @@
   }
 
   & code {
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-family: var(--font-mono);
     font-size: 0.875em;
     background: var(--canvas-soft);
     border: 1px solid var(--hairline);
@@ -328,6 +329,10 @@
 }
 
 /* ── Code Editor Prism Theme ─────────────────────────────────────── */
+.code-editor-content {
+  font-family: var(--font-mono);
+}
+
 .code-editor-content table,
 .code-editor-content tr,
 .code-editor-content th,
@@ -393,17 +398,17 @@
   color: #ffa657;
 }
 
-/* Light Theme Code Syntax Highlighting */
+/* Light Theme Code Syntax Highlighting (Vibrant, high-contrast GitHub Light style) */
 :root:not(.dark) .code-editor-content .token.comment,
 :root:not(.dark) .code-editor-content .token.prolog,
 :root:not(.dark) .code-editor-content .token.doctype,
 :root:not(.dark) .code-editor-content .token.cdata {
-  color: #64748b;
+  color: #6e7781;
   font-style: italic;
 }
 
 :root:not(.dark) .code-editor-content .token.punctuation {
-  color: #334155;
+  color: #24292f;
 }
 
 :root:not(.dark) .code-editor-content .token.property,
@@ -413,7 +418,7 @@
 :root:not(.dark) .code-editor-content .token.constant,
 :root:not(.dark) .code-editor-content .token.symbol,
 :root:not(.dark) .code-editor-content .token.deleted {
-  color: #0284c7;
+  color: #0550ae;
 }
 
 :root:not(.dark) .code-editor-content .token.selector,
@@ -422,30 +427,35 @@
 :root:not(.dark) .code-editor-content .token.char,
 :root:not(.dark) .code-editor-content .token.builtin,
 :root:not(.dark) .code-editor-content .token.inserted {
-  color: #0369a1;
+  color: #116329;
+  font-weight: 400;
 }
 
 :root:not(.dark) .code-editor-content .token.operator,
 :root:not(.dark) .code-editor-content .token.entity,
 :root:not(.dark) .code-editor-content .token.url {
-  color: #7c3aed;
+  color: #0969da;
 }
 
 :root:not(.dark) .code-editor-content .token.atrule,
 :root:not(.dark) .code-editor-content .token.attr-value,
 :root:not(.dark) .code-editor-content .token.keyword {
-  color: #d97706;
+  color: #cf222e;
   font-weight: 600;
 }
 
-:root:not(.dark) .code-editor-content .token.function,
+:root:not(.dark) .code-editor-content .token.function {
+  color: #8250df;
+  font-weight: 600;
+}
+
 :root:not(.dark) .code-editor-content .token.class-name {
-  color: #6d28d9;
+  color: #0550ae;
   font-weight: 600;
 }
 
 :root:not(.dark) .code-editor-content .token.regex,
 :root:not(.dark) .code-editor-content .token.important,
 :root:not(.dark) .code-editor-content .token.variable {
-  color: #ea580c;
+  color: #953800;
 }
