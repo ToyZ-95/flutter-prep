@@ -57,12 +57,12 @@ function getFileIcon(language: string) {
     return <Terminal className="h-3.5 w-3.5 text-emerald-400" />;
   }
   if (lang === "text" || lang === "") {
-    return <FileText className="h-3.5 w-3.5 text-slate-400" />;
+    return <FileText className="h-3.5 w-3.5 text-stone-400" />;
   }
   if (lang === "dart") {
-    return <Code2 className="h-3.5 w-3.5 text-sky-400" />;
+    return <Code2 className="h-3.5 w-3.5 text-amber-400" />;
   }
-  return <FileCode className="h-3.5 w-3.5 text-indigo-400" />;
+  return <FileCode className="h-3.5 w-3.5 text-orange-400" />;
 }
 
 export function CodeBlock({ code, language = "dart" }: CodeBlockProps) {
@@ -103,48 +103,48 @@ export function CodeBlock({ code, language = "dart" }: CodeBlockProps) {
     }
   };
 
-  // Theme-specific class names
+  // Theme-specific class names — warm palette
   const containerClasses =
     theme === "pitch-dark"
-      ? "border-[#18181c] bg-[#000000] shadow-[0_8px_30px_rgb(0,0,0,0.9)]"
+      ? "border-[#1e1810] bg-[#000000] shadow-[0_8px_30px_rgb(0,0,0,0.9)]"
       : theme === "dark"
-        ? "border-[#1b2537] bg-[#0a0f1d] shadow-xl"
-        : "border-slate-300 bg-slate-50 shadow-sm";
+        ? "border-[#2a1f18] bg-[#120d0a] shadow-xl"
+        : "border-stone-300 bg-stone-50 shadow-sm";
 
   const headerClasses =
     theme === "pitch-dark"
-      ? "border-b border-[#18181c] bg-[#050508] text-zinc-300"
+      ? "border-b border-[#1e1810] bg-[#080604] text-amber-100/80"
       : theme === "dark"
-        ? "border-b border-[#1b2537] bg-[#0e1524] text-slate-300"
-        : "border-b border-slate-300/80 bg-slate-200/80 text-slate-700";
+        ? "border-b border-[#2a1f18] bg-[#1a1310] text-stone-300"
+        : "border-b border-stone-300/80 bg-stone-200/80 text-stone-700";
 
   const tabBadgeClasses =
     theme === "pitch-dark"
-      ? "border-[#222228] bg-[#000000] text-cyan-300 shadow-2xs"
+      ? "border-[#2a2018] bg-[#000000] text-amber-300 shadow-2xs"
       : theme === "dark"
-        ? "border-[#1e293b] bg-[#0a0f1d] text-sky-400"
-        : "border-slate-300/80 bg-white text-slate-800";
+        ? "border-[#382c22] bg-[#120d0a] text-amber-400"
+        : "border-stone-300/80 bg-white text-stone-800";
 
   const copyBtnClasses =
     theme === "pitch-dark"
-      ? "bg-[#0e0e12] hover:bg-[#181822] text-zinc-300 border border-[#222228]"
+      ? "bg-[#110e0a] hover:bg-[#1a1610] text-amber-100/80 border border-[#2a2018]"
       : theme === "dark"
-        ? "bg-[#162032] hover:bg-[#1f2d45] text-slate-300 border border-[#1b2537]"
-        : "bg-slate-200/80 hover:bg-slate-300 text-slate-700 border border-slate-300";
+        ? "bg-[#221a14] hover:bg-[#2c2018] text-stone-300 border border-[#2a1f18]"
+        : "bg-stone-200/80 hover:bg-stone-300 text-stone-700 border border-stone-300";
 
   const lineNoClasses =
     theme === "pitch-dark"
-      ? "text-zinc-600 border-[#18181c] group-hover/line:text-zinc-400"
+      ? "text-amber-900/60 border-[#1e1810] group-hover/line:text-amber-700/60"
       : theme === "dark"
-        ? "text-slate-600 border-[#1b2537] group-hover/line:text-slate-400"
-        : "text-slate-400 border-slate-300/70 group-hover/line:text-slate-600";
+        ? "text-stone-600 border-[#2a1f18] group-hover/line:text-stone-400"
+        : "text-stone-400 border-stone-300/70 group-hover/line:text-stone-600";
 
   const codeTextClasses =
     theme === "pitch-dark"
-      ? "text-zinc-100"
+      ? "text-amber-50"
       : theme === "dark"
-        ? "text-slate-200"
-        : "text-slate-900";
+        ? "text-stone-200"
+        : "text-stone-900";
 
   return (
     <div
@@ -203,7 +203,7 @@ export function CodeBlock({ code, language = "dart" }: CodeBlockProps) {
           {lines.map((lineHtml, i) => (
             <div
               key={i}
-              className="flex items-baseline group/line hover:bg-slate-500/10 transition-colors"
+              className="flex items-baseline group/line hover:bg-amber-500/5 transition-colors"
             >
               <span
                 className={`w-11 select-none pr-3 text-right font-mono text-[11px] leading-[1.45] border-r shrink-0 opacity-55 ${lineNoClasses}`}

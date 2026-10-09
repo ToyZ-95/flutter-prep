@@ -37,7 +37,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-200 flex flex-col font-sans selection:bg-primary/20 selection:text-primary">
       {/* Top Announcement Bar */}
-      <div className="border-b border-hairline/60 bg-primary/5 px-4 py-1.5 text-center text-xs text-ink-secondary">
+      <div className="border-b border-hairline/60 bg-gradient-to-r from-amber-500/5 via-orange-500/5 to-amber-500/5 px-4 py-1.5 text-center text-xs text-ink-secondary">
         <span className="inline-flex items-center gap-1.5 font-medium">
           <Flame className="h-3.5 w-3.5 text-amber-500 shrink-0" />
           <span>Complete 2026 Flutter & Dart Technical Interview Master Guide with runnable code & traps.</span>
@@ -49,7 +49,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-3 px-5 py-3">
           {/* Logo / Brand */}
           <Link to="/" className="group flex items-center gap-2.5">
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-tr from-sky-600 via-sky-500 to-indigo-500 text-white font-bold text-sm shadow-sm transition-transform group-hover:scale-105">
+            <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-600 via-orange-500 to-yellow-500 text-white font-bold text-sm shadow-sm transition-transform group-hover:scale-105">
               <span>F</span>
               <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-emerald-400 ring-2 ring-canvas" />
             </div>
@@ -144,7 +144,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <div className="grid gap-8 md:grid-cols-4">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-white font-bold text-xs">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-amber-600 to-orange-500 text-white font-bold text-xs">
                   F
                 </div>
                 <span className="font-bold text-[16px] text-ink">Flutter Interview Prep</span>

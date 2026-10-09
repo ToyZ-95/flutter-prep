@@ -43,7 +43,7 @@
   --color-sticker-orange: var(--sticker-orange);
   --color-sticker-teal: var(--sticker-teal);
   --color-sticker-green: var(--sticker-green);
-  --color-sticker-sky: var(--sticker-sky);
+  --color-sticker-amber: var(--sticker-amber);
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --shadow-soft:
@@ -52,99 +52,100 @@
     0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
+/* ── Warm Ember Light Mode ─────────────────────────────────────────── */
 :root {
   --radius: 14px;
   --canvas: #ffffff;
-  --canvas-soft: #f8fafc;
-  --background: #f8fafc;
-  --ink: #090d16;
-  --ink-secondary: #334155;
-  --ink-muted: #64748b;
-  --ink-faint: #94a3b8;
+  --canvas-soft: #faf8f5;
+  --background: #faf8f5;
+  --ink: #1c1410;
+  --ink-secondary: #44352a;
+  --ink-muted: #78685c;
+  --ink-faint: #a8998d;
   --foreground: var(--ink);
   --card: #ffffff;
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
-  --primary: #0284c7;
-  --primary-active: #0369a1;
+  --primary: #d97706;
+  --primary-active: #b45309;
   --primary-foreground: #ffffff;
-  --secondary: #090d16;
-  --secondary-foreground: #f8fafc;
-  --muted: #f1f5f9;
+  --secondary: #1c1410;
+  --secondary-foreground: #faf8f5;
+  --muted: #f5f0eb;
   --muted-foreground: var(--ink-muted);
-  --accent: #e0f2fe;
-  --accent-foreground: #0284c7;
-  --destructive: #ef4444;
+  --accent: #fef3c7;
+  --accent-foreground: #92400e;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --hairline: #e2e8f0;
-  --border: #e2e8f0;
-  --input: #cbd5e1;
-  --ring: #0284c7;
+  --hairline: #e7ddd3;
+  --border: #e7ddd3;
+  --input: #d4c8bc;
+  --ring: #d97706;
   --sticker-purple: #a855f7;
   --sticker-pink: #ec4899;
-  --sticker-orange: #f97316;
+  --sticker-orange: #ea580c;
   --sticker-teal: #14b8a6;
-  --sticker-green: #10b981;
-  --sticker-sky: #0ea5e9;
+  --sticker-green: #16a34a;
+  --sticker-amber: #d97706;
 }
 
-/* Midnight Obsidian Dark Mode */
+/* ── Charcoal Warm Dark Mode ───────────────────────────────────────── */
 .dark {
-  --canvas: #0d131f;
-  --canvas-soft: #070a12;
-  --background: #070a12;
-  --ink: #f1f5f9;
-  --ink-secondary: #cbd5e1;
-  --ink-muted: #94a3b8;
-  --ink-faint: #64748b;
+  --canvas: #171211;
+  --canvas-soft: #0e0a09;
+  --background: #0e0a09;
+  --ink: #f5ede6;
+  --ink-secondary: #d4c4b5;
+  --ink-muted: #9a877a;
+  --ink-faint: #6b5a4e;
   --foreground: var(--ink);
-  --card: #0d131f;
+  --card: #171211;
   --card-foreground: var(--ink);
-  --popover: #0d131f;
+  --popover: #171211;
   --popover-foreground: var(--ink);
-  --primary: #38bdf8;
-  --primary-active: #0ea5e9;
-  --primary-foreground: #070a12;
-  --secondary: #131b2c;
-  --secondary-foreground: #f8fafc;
-  --muted: #131b2c;
+  --primary: #f59e0b;
+  --primary-active: #d97706;
+  --primary-foreground: #0e0a09;
+  --secondary: #1f1816;
+  --secondary-foreground: #f5ede6;
+  --muted: #1f1816;
   --muted-foreground: var(--ink-muted);
-  --accent: #172238;
-  --accent-foreground: #38bdf8;
-  --hairline: #1b2537;
-  --border: #1b2537;
-  --input: #233148;
-  --ring: #38bdf8;
+  --accent: #2a1f14;
+  --accent-foreground: #fbbf24;
+  --hairline: #2a1f18;
+  --border: #2a1f18;
+  --input: #382c22;
+  --ring: #f59e0b;
 }
 
-/* Pure Pitch Black AMOLED Mode */
+/* ── Pure Pitch Black AMOLED Mode ──────────────────────────────────── */
 .pitch-dark {
-  --canvas: #050508;
+  --canvas: #080604;
   --canvas-soft: #000000;
   --background: #000000;
   --ink: #ffffff;
-  --ink-secondary: #e4e4e7;
-  --ink-muted: #a1a1aa;
-  --ink-faint: #52525b;
+  --ink-secondary: #e8ddd3;
+  --ink-muted: #a8978a;
+  --ink-faint: #5c4f44;
   --foreground: var(--ink);
-  --card: #050508;
+  --card: #080604;
   --card-foreground: var(--ink);
-  --popover: #050508;
+  --popover: #080604;
   --popover-foreground: var(--ink);
-  --primary: #00f2fe;
-  --primary-active: #38bdf8;
+  --primary: #fbbf24;
+  --primary-active: #f59e0b;
   --primary-foreground: #000000;
-  --secondary: #0d0d10;
+  --secondary: #110e0a;
   --secondary-foreground: #ffffff;
-  --muted: #0d0d10;
+  --muted: #110e0a;
   --muted-foreground: var(--ink-muted);
-  --accent: #111116;
-  --accent-foreground: #00f2fe;
-  --hairline: #18181c;
-  --border: #18181c;
-  --input: #222228;
-  --ring: #00f2fe;
+  --accent: #1a1408;
+  --accent-foreground: #fbbf24;
+  --hairline: #1e1810;
+  --border: #1e1810;
+  --input: #2a2018;
+  --ring: #fbbf24;
 }
 
 @layer base {
@@ -357,12 +358,12 @@
 .dark .code-editor-content .token.prolog,
 .dark .code-editor-content .token.doctype,
 .dark .code-editor-content .token.cdata {
-  color: #8b949e;
+  color: #8b7a6e;
   font-style: italic;
 }
 
 .dark .code-editor-content .token.punctuation {
-  color: #c9d1d9;
+  color: #c9bfb4;
 }
 
 .dark .code-editor-content .token.property,
@@ -372,7 +373,7 @@
 .dark .code-editor-content .token.constant,
 .dark .code-editor-content .token.symbol,
 .dark .code-editor-content .token.deleted {
-  color: #79c0ff;
+  color: #f59e0b;
 }
 
 .dark .code-editor-content .token.selector,
@@ -381,32 +382,32 @@
 .dark .code-editor-content .token.char,
 .dark .code-editor-content .token.builtin,
 .dark .code-editor-content .token.inserted {
-  color: #a5d6ff;
+  color: #a3e635;
 }
 
 .dark .code-editor-content .token.operator,
 .dark .code-editor-content .token.entity,
 .dark .code-editor-content .token.url {
-  color: #d2a8ff;
+  color: #c4b5fd;
 }
 
 .dark .code-editor-content .token.atrule,
 .dark .code-editor-content .token.attr-value,
 .dark .code-editor-content .token.keyword {
-  color: #ff7b72;
+  color: #fb923c;
   font-weight: 600;
 }
 
 .dark .code-editor-content .token.function,
 .dark .code-editor-content .token.class-name {
-  color: #d2a8ff;
+  color: #c4b5fd;
   font-weight: 500;
 }
 
 .dark .code-editor-content .token.regex,
 .dark .code-editor-content .token.important,
 .dark .code-editor-content .token.variable {
-  color: #ffa657;
+  color: #fca5a5;
 }
 
 /* AMOLED Pitch Black Radiant Syntax Tokens */
@@ -414,16 +415,16 @@
 .pitch-dark .code-editor-content .token.prolog,
 .pitch-dark .code-editor-content .token.doctype,
 .pitch-dark .code-editor-content .token.cdata {
-  color: #64748b;
+  color: #6b5a4e;
   font-style: italic;
 }
 
 .pitch-dark .code-editor-content .token.punctuation {
-  color: #94a3b8;
+  color: #a89888;
 }
 
 .pitch-dark .code-editor-content .token.keyword {
-  color: #ff3366;
+  color: #ff6b35;
   font-weight: 700;
 }
 
@@ -433,20 +434,20 @@
 }
 
 .pitch-dark .code-editor-content .token.class-name {
-  color: #facc15;
+  color: #fbbf24;
   font-weight: 600;
 }
 
 .pitch-dark .code-editor-content .token.string,
 .pitch-dark .code-editor-content .token.char,
 .pitch-dark .code-editor-content .token.attr-value {
-  color: #22d3ee;
+  color: #a3e635;
 }
 
 .pitch-dark .code-editor-content .token.number,
 .pitch-dark .code-editor-content .token.constant,
 .pitch-dark .code-editor-content .token.boolean {
-  color: #38bdf8;
+  color: #fbbf24;
   font-weight: 600;
 }
 
@@ -460,17 +461,17 @@
   color: #fb923c;
 }
 
-/* Light Theme Code Syntax Highlighting (Vibrant, high-contrast GitHub Light style) */
+/* Light Theme Code Syntax Highlighting (Warm, high-contrast) */
 :root:not(.dark) .code-editor-content .token.comment,
 :root:not(.dark) .code-editor-content .token.prolog,
 :root:not(.dark) .code-editor-content .token.doctype,
 :root:not(.dark) .code-editor-content .token.cdata {
-  color: #6e7781;
+  color: #8b7a6e;
   font-style: italic;
 }
 
 :root:not(.dark) .code-editor-content .token.punctuation {
-  color: #24292f;
+  color: #44352a;
 }
 
 :root:not(.dark) .code-editor-content .token.property,
@@ -480,7 +481,7 @@
 :root:not(.dark) .code-editor-content .token.constant,
 :root:not(.dark) .code-editor-content .token.symbol,
 :root:not(.dark) .code-editor-content .token.deleted {
-  color: #0550ae;
+  color: #b45309;
 }
 
 :root:not(.dark) .code-editor-content .token.selector,
@@ -489,35 +490,35 @@
 :root:not(.dark) .code-editor-content .token.char,
 :root:not(.dark) .code-editor-content .token.builtin,
 :root:not(.dark) .code-editor-content .token.inserted {
-  color: #116329;
+  color: #166534;
   font-weight: 400;
 }
 
 :root:not(.dark) .code-editor-content .token.operator,
 :root:not(.dark) .code-editor-content .token.entity,
 :root:not(.dark) .code-editor-content .token.url {
-  color: #0969da;
+  color: #7c3aed;
 }
 
 :root:not(.dark) .code-editor-content .token.atrule,
 :root:not(.dark) .code-editor-content .token.attr-value,
 :root:not(.dark) .code-editor-content .token.keyword {
-  color: #cf222e;
+  color: #c2410c;
   font-weight: 600;
 }
 
 :root:not(.dark) .code-editor-content .token.function {
-  color: #8250df;
+  color: #7c3aed;
   font-weight: 600;
 }
 
 :root:not(.dark) .code-editor-content .token.class-name {
-  color: #0550ae;
+  color: #b45309;
   font-weight: 600;
 }
 
 :root:not(.dark) .code-editor-content .token.regex,
 :root:not(.dark) .code-editor-content .token.important,
 :root:not(.dark) .code-editor-content .token.variable {
-  color: #953800;
+  color: #9a3412;
 }

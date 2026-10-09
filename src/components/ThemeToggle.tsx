@@ -14,12 +14,12 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     {
       id: "dark",
       label: "Dark",
-      icon: <Moon className="h-3.5 w-3.5 text-sky-400" />,
+      icon: <Moon className="h-3.5 w-3.5 text-orange-400" />,
     },
     {
       id: "pitch-dark",
       label: "AMOLED",
-      icon: <Zap className="h-3.5 w-3.5 text-cyan-400" />,
+      icon: <Zap className="h-3.5 w-3.5 text-yellow-400" />,
     },
   ];
 
