@@ -1,5 +1,5 @@
 import React from "react";
-import { Sun, Moon, Sparkles } from "lucide-react";
+import { Sun, Moon, Zap } from "lucide-react";
 import { useTheme, type ThemeMode } from "@/lib/theme";
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
@@ -14,12 +14,12 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     {
       id: "dark",
       label: "Dark",
-      icon: <Moon className="h-3.5 w-3.5 text-indigo-400" />,
+      icon: <Moon className="h-3.5 w-3.5 text-sky-400" />,
     },
     {
       id: "pitch-dark",
-      label: "Pitch",
-      icon: <Sparkles className="h-3.5 w-3.5 text-purple-400" />,
+      label: "AMOLED",
+      icon: <Zap className="h-3.5 w-3.5 text-cyan-400" />,
     },
   ];
 

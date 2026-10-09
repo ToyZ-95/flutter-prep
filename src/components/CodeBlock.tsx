@@ -106,37 +106,37 @@ export function CodeBlock({ code, language = "dart" }: CodeBlockProps) {
   // Theme-specific class names
   const containerClasses =
     theme === "pitch-dark"
-      ? "border-zinc-800 bg-[#000000] shadow-2xl"
+      ? "border-[#18181c] bg-[#000000] shadow-[0_8px_30px_rgb(0,0,0,0.9)]"
       : theme === "dark"
-        ? "border-slate-800 bg-[#0d1117] shadow-xl"
-        : "border-slate-300 bg-slate-50 shadow-md";
+        ? "border-[#1b2537] bg-[#0a0f1d] shadow-xl"
+        : "border-slate-300 bg-slate-50 shadow-sm";
 
   const headerClasses =
     theme === "pitch-dark"
-      ? "border-b border-zinc-800/80 bg-[#0c0c0d] text-zinc-300"
+      ? "border-b border-[#18181c] bg-[#050508] text-zinc-300"
       : theme === "dark"
-        ? "border-b border-[#21262d] bg-[#161b22] text-slate-300"
+        ? "border-b border-[#1b2537] bg-[#0e1524] text-slate-300"
         : "border-b border-slate-300/80 bg-slate-200/80 text-slate-700";
 
   const tabBadgeClasses =
     theme === "pitch-dark"
-      ? "border-zinc-800 bg-[#000000] text-zinc-200"
+      ? "border-[#222228] bg-[#000000] text-cyan-300 shadow-2xs"
       : theme === "dark"
-        ? "border-slate-700/40 bg-[#0d1117] text-slate-300"
+        ? "border-[#1e293b] bg-[#0a0f1d] text-sky-400"
         : "border-slate-300/80 bg-white text-slate-800";
 
   const copyBtnClasses =
     theme === "pitch-dark"
-      ? "bg-[#18181b] hover:bg-zinc-800 text-zinc-300"
+      ? "bg-[#0e0e12] hover:bg-[#181822] text-zinc-300 border border-[#222228]"
       : theme === "dark"
-        ? "bg-[#21262d] hover:bg-slate-700 text-slate-300"
-        : "bg-slate-200/80 hover:bg-slate-300 text-slate-700";
+        ? "bg-[#162032] hover:bg-[#1f2d45] text-slate-300 border border-[#1b2537]"
+        : "bg-slate-200/80 hover:bg-slate-300 text-slate-700 border border-slate-300";
 
   const lineNoClasses =
     theme === "pitch-dark"
-      ? "text-zinc-600 border-zinc-800/80 group-hover/line:text-zinc-400"
+      ? "text-zinc-600 border-[#18181c] group-hover/line:text-zinc-400"
       : theme === "dark"
-        ? "text-slate-600 border-slate-800/60 group-hover/line:text-slate-400"
+        ? "text-slate-600 border-[#1b2537] group-hover/line:text-slate-400"
         : "text-slate-400 border-slate-300/70 group-hover/line:text-slate-600";
 
   const codeTextClasses =
@@ -198,28 +198,25 @@ export function CodeBlock({ code, language = "dart" }: CodeBlockProps) {
       </div>
 
       {/* Code Editor Body with Line Numbers */}
-      <div className="code-editor-content overflow-x-auto py-3 font-mono text-[13.5px] leading-[1.65]">
-        <table className="w-full border-collapse">
-          <tbody>
-            {lines.map((lineHtml, i) => (
-              <tr
-                key={i}
-                className="group/line hover:bg-slate-800/20 dark:hover:bg-slate-800/40 transition-colors"
+      <div className="code-editor-content overflow-x-auto py-2.5 font-mono text-[13px] leading-[1.45]">
+        <div className="min-w-fit w-full inline-block">
+          {lines.map((lineHtml, i) => (
+            <div
+              key={i}
+              className="flex items-baseline group/line hover:bg-slate-500/10 transition-colors"
+            >
+              <span
+                className={`w-11 select-none pr-3 text-right font-mono text-[11px] leading-[1.45] border-r shrink-0 opacity-55 ${lineNoClasses}`}
               >
-                <td
-                  className={`w-12 select-none py-0.5 pr-3 text-right font-mono text-[12px] align-top border-r ${lineNoClasses}`}
-                >
-                  {i + 1}
-                </td>
-                <td
-                  className={`py-0.5 pl-4 pr-4 whitespace-pre align-top font-mono ${codeTextClasses}`}
-                >
-                  <span dangerouslySetInnerHTML={{ __html: lineHtml || "&nbsp;" }} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                {i + 1}
+              </span>
+              <span
+                className={`pl-3.5 pr-4 whitespace-pre font-mono leading-[1.45] flex-1 ${codeTextClasses}`}
+                dangerouslySetInnerHTML={{ __html: lineHtml || "&nbsp;" }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
